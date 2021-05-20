@@ -222,7 +222,8 @@ header .container {
   padding: 10px 32px;
 }
 
-.hero .btn:hover {
+.hero .btn:hover,
+.hero .btn:focus {
   background-color: var(--btn-hover);
 }
 
@@ -312,7 +313,8 @@ header .container {
   padding-bottom: 30px;
   background-color: var(--white-color);
 
-  box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
 .member-photo {
@@ -351,17 +353,21 @@ header .container {
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  color: var(--icon-color);
-}
-
-.social-link:hover {
-  background-color: var(--accent-color);
-  color: var(--white-color);
 }
 
 .social-link-icon {
   margin: auto;
-  fill: currentColor;
+  fill: var(--icon-color);
+}
+
+.social-link:hover,
+.social-link:focus {
+  background-color: var(--accent-color);
+}
+
+.social-link:hover .social-link-icon,
+.social-link:focus .social-link-icon {
+  fill: var(--white-color);
 }
 
 /* ================ our clients =================== */
@@ -383,18 +389,22 @@ header .container {
   display: flex;
   height: 100%;
   border: 1px solid var(--icon-color);
-  color: var(--icon-color);
   border-radius: 4px;
-}
-
-.client-link:hover {
-  color: var(--accent-color);
-  border-color: var(--accent-color);
 }
 
 .client-icon {
   margin: auto;
-  fill: currentColor;
+  fill: var(--icon-color);
+}
+
+.client-link:hover,
+.client-link:focus {
+  border-color: var(--accent-color);
+}
+
+.client-link:hover .client-icon,
+.client-link:focus .client-icon {
+  fill: var(--accent-color);
 }
 
 /* ============ footer ================ */
@@ -407,6 +417,10 @@ footer {
 
 .wrapper {
   display: flex;
+}
+
+.addresses {
+  margin-right: 70px;
 }
 
 footer .logo {
@@ -440,13 +454,21 @@ address {
   color: var(--accent-color);
 }
 
+.social {
+  margin-top: 12px;
+}
 .social-title {
+  margin-bottom: 20px;
   font-weight: 700;
   text-transform: uppercase;
 }
 
 footer .social-link {
   background-color: rgba(255, 255, 255, 0.1);
+}
+
+footer .social-link-icon {
+  fill: var(--white-color);
 }
 
 /* =============== portfolio ================== */
@@ -472,6 +494,8 @@ footer .social-link {
 .portfolio .filter-button:hover {
   color: var(--white-color);
   background-color: var(--accent-color);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
 .gallery {
@@ -486,6 +510,11 @@ footer .social-link {
 
 .gallery .item {
   margin-bottom: 30px;
+}
+
+.gallery .item:hover {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
 .card-title {
